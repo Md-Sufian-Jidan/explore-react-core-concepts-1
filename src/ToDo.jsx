@@ -30,9 +30,28 @@
 //     )
 // }
 
-//Conditional Rendering option-4 ||
-export default function ToDo({task,  isDone}) {
-    return (
-        <li>{task} {isDone || ': Do it'}</li>
-    )
-}
+// Conditional Rendering option-4 &&
+// export default function ToDo({task,  isDone}) {
+//     return (
+//         <li>{task} {isDone && ': Done'}</li>
+//     )
+// }
+
+//Conditional Rendering option-5 ||
+// export default function ToDo({task,  isDone}) {
+//     return (
+//         <li>{task} {isDone || ': Do it'}</li>
+//     )
+// }
+
+//conditional Rendering option-6 with variable
+export default function ToDo({task, isDone}){
+    let listItems;
+        if(isDone){
+            listItems = <li>Finished : {task}</li>
+        }
+        else{
+            listItems = <li>Work On : {task}</li>
+        }
+        return listItems;
+    }
